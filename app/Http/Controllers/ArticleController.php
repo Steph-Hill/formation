@@ -6,13 +6,41 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+
+
+    public $defautStagiaires = [ "Emeric",
+
+                                "Veronique",
+
+                                "Kaita",
+
+                                "Stephen",
+
+                                "redaud" ] ;
+
+
     //
-    public function index($id=0){
+    public function index(){
 
-        $title = "Ma formation - ". $id;
+      
+       $stagiaires = $this->defautStagiaires;
 
-        return view("articles", [ "title"=>$title, "id"=>$id ]); 
+       
+        /* return view("articles", compact("prenom","nom")); */ 
 
+        /* return view("articles", ["pre"=>$prenom, "nom"=>$nom, "age"=>$age]); */
+
+        return view("articles", compact("stagiaires"));
     }
-    
+
+    public function detail($id=''){
+
+        $stagiaire = $this->defautStagiaires[$id] ;
+
+        return view("detail", compact("stagiaire"));
+           
+    }
 }
+
+
+    

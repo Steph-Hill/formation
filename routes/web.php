@@ -7,6 +7,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,10 +21,9 @@ use App\Http\Controllers\ContactController;
 
 Route::get('/',[ArticleController::class,'index']);
 
-Route::get('/{id}',[ArticleController::class,'index']);
+Route::get('/detail/{nom}',[ArticleController::class,'detail']);
 
 
-Route::get('/contact',[ContactController::class,'index']);
 
 
 
